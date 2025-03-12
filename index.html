@@ -31,6 +31,17 @@
 							  </aside>
                 </section>
 
+								<section>
+									<section><p>What is an open source model?</p></section>
+									<section>
+										<p>The largest problem is that AI models are binaries, and the "source code" isn't just the data, it's so much more.</p>
+									</section>
+									<section><img src="./images/mof.jpg" /></section>
+									<section>
+										<p>tl;dr: Everyone is debating what "open source" means and we can't seem to come to an agreement, but the Model Openness Framework seems to be the most supported.</p>
+									</section>
+   							</section>
+
                 <section>
 									<section>
 										<img src="https://github.com/instructlab/.github/blob/main/assets/instructlab-banner.png?raw=true" />
@@ -100,22 +111,58 @@
 											<li><a target="_blank" href="https://www.ibm.com/granite/docs/models/code/">Granite Code</a></li>
 										</ul>
 									</section>
-									<section><p>What is an open source model?</p></section>
-									<section><img src="./images/mof.jpg" /></section>
-									<section><p><bold>tl;dr</bold> Everyone is debating it and we can't seem to come to an agreement...</p></section>
                 </section>
 
 								<section>
 									<section><p>Use Cases for Granite</p></section>
 									<section><p><a target="_blank" href="https://github.com/jjasghar/ai-abstract-classifier">ai-abstract-classifier</a>: Run abstracts through a local LLM to give you some possible scores on what you are looking for.</p></section>
 									<section>
-										<p>Leverage the <a target="_blank" href="https://www.ibm.com/granite/docs/models/time-series/">Granite TimeSeries</a> model to project capacity planning </p>
-										<small>I think I've figured out how to push <a target="_blank" href="https://nagios.org">Nagios data</a> into the model to project possible alerts...I'm hoping to have a link here when it's ready to show off...</small></section>
-									<section><p>Join me in the Granite Lounge to help me figure out the process of using <a target="_blank" href="https://www.ibm.com/granite/docs/models/time-series/">Granite TimeSeries</a> model to project my insulin pump supplies and insulin usage</p></section>
+										<p>Leverage the <a target="_blank" href="https://www.ibm.com/granite/docs/models/time-series/">Granite Time Series</a> model to project capacity planning </p>
+										<small>I think I've figured out how to push <a target="_blank" href="https://nagios.org">Nagios data</a> into the model to project possible alerts...I'm hoping to have a link here when it's ready to show off...</small>
+									</section>
+									<section>
+										<p>Leverage <a target="_blank" href="https://www.ibm.com/granite/docs/models/granite/">Granite 3.2</a> with some simple code like this to create stories for bed time...(as a Dad elementry school kids this can be very helpful)</p>
+									</section>
+									<section>
+										<pre><code data-trim class="language-bash">
+ollama run granite3.2
+/set system "You are Granite Story Builder, a creative writing assistant built
+by IBM to help develop engaging stories or young audiences. You provide guidance
+on designing characters and plot arcs. You also help
+flesh out ideas with well written prose"
+										</code></pre>
+									</section>
+									<section>
+										<p>Then leverage local open source AI it to make some cover pictures!</p>
+									</section>
+									<section>
+										<pre><code data-trim class="language-python">
+from diffusers import AutoPipelineForText2Image
+import torch
+
+model = AutoPipelineForText2Image.from_pretrained("stabilityai/sdxl-turbo", torch_dtype=torch.float16, variant="fp16")
+if torch.backends.mps.is_available():
+    model.to("mps")
+
+while True:
+    prompt = input("prompt (q)> ")
+    if prompt == "q":
+        break
+    image = model(prompt=prompt, num_inference_steps=2, guidance_scale=0.0).images[0]
+    image.show()
+    if (save_path := input("Save (y/N)? ").lower()) == "y":
+        image.save(save_path)
+										</code></pre>
+									</section>
+									<section>
+										<p>Or even better come join me in the Granite Lounge to help me figure out the process of using <a target="_blank" href="https://www.ibm.com/granite/docs/models/time-series/">Granite Time Series</a> model to project my insulin pump supplies and insulin usage</p>
+									  <br />
+								    <small>I have the data, and I'm making progress, but it would be awesome to learn with you!</small>
+									</section>
                 </section>
 
 								<section>
-									<section><p>How can I play with Granite?</p></section>
+									<section><p>But JJ, how can I play with Granite?</p></section>
 									<section>
 										<p><a target="_blank" href="https://ibm.github.io/opensource-ai-workshop/">Open Source Workshop</a></p>
 										<img src="./images/opensource-workshop.png"/ >
