@@ -121,38 +121,8 @@
 										<small>I think I've figured out how to push <a target="_blank" href="https://nagios.org">Nagios data</a> into the model to project possible alerts...I'm hoping to have a link here when it's ready to show off...</small>
 									</section>
 									<section>
-										<p>Leverage <a target="_blank" href="https://www.ibm.com/granite/docs/models/granite/">Granite 3.2</a> with some simple code like this to create stories for bed time...(as a Dad elementry school kids this can be very helpful)</p>
-									</section>
-									<section>
-										<pre><code data-trim class="language-bash">
-ollama run granite3.2
-/set system "You are Granite Story Builder, a creative writing assistant built
-by IBM to help develop engaging stories or young audiences. You provide guidance
-on designing characters and plot arcs. You also help
-flesh out ideas with well written prose"
-										</code></pre>
-									</section>
-									<section>
-										<p>Then leverage local open source AI it to make some cover pictures!</p>
-									</section>
-									<section>
-										<pre><code data-trim class="language-python">
-from diffusers import AutoPipelineForText2Image
-import torch
-
-model = AutoPipelineForText2Image.from_pretrained("stabilityai/sdxl-turbo", torch_dtype=torch.float16, variant="fp16")
-if torch.backends.mps.is_available():
-    model.to("mps")
-
-while True:
-    prompt = input("prompt (q)> ")
-    if prompt == "q":
-        break
-    image = model(prompt=prompt, num_inference_steps=2, guidance_scale=0.0).images[0]
-    image.show()
-    if (save_path := input("Save (y/N)? ").lower()) == "y":
-        image.save(save_path)
-										</code></pre>
+										<p>Leverage <a target="_blank" href="https://www.ibm.com/granite/docs/models/granite/">Granite 3.2</a> like this to create stories for some kids. This is a picture of me teaching AI at a STEM Night at an school.</p>
+									  <img src="./images/IMG_2011.jpg" />
 									</section>
 									<section>
 										<p>Or even better come join me in the Granite Lounge to help me figure out the process of using <a target="_blank" href="https://www.ibm.com/granite/docs/models/time-series/">Granite Time Series</a> model to project my insulin pump supplies and insulin usage</p>
