@@ -1,25 +1,24 @@
 {
-  "name": "reveal.js",
-  "version": "5.0.3",
-  "description": "The HTML Presentation Framework",
-  "homepage": "https://revealjs.com",
-  "subdomain": "revealjs",
+  "name": "open-source-ai-slides",
+  "version": "1.0.0",
+  "description": "A presentation about Open Source AI, Granite models, and InstructLab built with reveal.js",
+  "homepage": "https://github.com/jjasghar/open-source-ai-slides",
   "main": "dist/reveal.js",
   "module": "dist/reveal.esm.js",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "scripts": {
     "test": "gulp test",
     "start": "gulp serve",
-    "build": "gulp build"
+    "build": "gulp build",
+    "dev": "gulp serve"
   },
   "author": {
-    "name": "Hakim El Hattab",
-    "email": "hakim.elhattab@gmail.com",
-    "web": "https://hakim.se"
+    "name": "JJ Asghar",
+    "email": "awesome@ibm.com"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/hakimel/reveal.js.git"
+    "url": "git://github.com/jjasghar/open-source-ai-slides.git"
   },
   "engines": {
     "node": ">=18.0.0"
@@ -27,7 +26,12 @@
   "keywords": [
     "reveal",
     "slides",
-    "presentation"
+    "presentation",
+    "open-source",
+    "ai",
+    "granite",
+    "instructlab",
+    "machine-learning"
   ],
   "devDependencies": {
     "@babel/core": "^7.23.2",

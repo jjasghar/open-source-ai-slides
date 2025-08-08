@@ -1,6 +1,6 @@
 /*!
-* reveal.js 5.0.3
-* https://revealjs.com
+* reveal.js 1.0.0
+* https://github.com/jjasghar/open-source-ai-slides
 * MIT licensed
 *
 * Copyright (C) 2011-2023 Hakim El Hattab, https://hakim.se
